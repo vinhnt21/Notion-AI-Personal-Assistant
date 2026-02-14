@@ -17,10 +17,13 @@ hiddenimports = []
 tmp_ret = collect_all('streamlit')
 datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
 
-# Add other libraries to ensure they are found (sometimes autodetect misses them)
+# Collect all langgraph modules to fix "No module named 'langgraph.prebuilt'"
+tmp_ret_lg = collect_all('langgraph')
+datas += tmp_ret_lg[0]; binaries += tmp_ret_lg[1]; hiddenimports += tmp_ret_lg[2]
+
+# Add other libraries to ensure they are found
 hiddenimports += [
     'langchain',
-    'langgraph',
     'langchain_openai', 
     'langchain_google_genai',
     'langchain_anthropic',
