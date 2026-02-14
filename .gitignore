@@ -1,0 +1,20 @@
+# Environment
+venv/
+.env
+*.pyc
+__pycache__/
+
+# Data
+data/*.json
+!data/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+docs/
